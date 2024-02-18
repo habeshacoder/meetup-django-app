@@ -21,3 +21,20 @@ def index(request):
         "meetup\index.html",
         {"show_message": False, "meetings": meetings},
     )
+
+
+def meetup_detail(request, meetup_slug):
+    selected_meeting = {
+        "title": "meeting one",
+        "location": "NewYork",
+        "description": "do not miss this amazing zoom meeting that will happen next Monday",
+    }
+
+    return render(
+        request,
+        "meetup\meetup_details.html",
+        {
+            "title": selected_meeting["title"],
+            "description": selected_meeting["description"],
+        },
+    )
