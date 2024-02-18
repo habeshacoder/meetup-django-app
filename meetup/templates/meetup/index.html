@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Meetings</title>
+    <link rel="stylesheet" href="{% static 'meetup/styles/base.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'meetup/styles/meetup_details.css' %}"
+    />
+  </head>
+  <body>
+    <h1>All Meetings List</h1>
+    <header id="main-header">
+      <nav>
+        <a href="/meetups" id="main-logo">Django Meetups</a>
+        <h1>We got great meetups coming up!</h1>
+        <h1>Choose one that suits.</h1>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Upcoming Meetings</h2>
+        <ol>
+          {% for meetup in meetings %}
+          <li class="meetup-item">
+            <article>
+              <div class="meetup-summary">
+                <div class="meetup-image">
+                  <img src="" alt="No Image" />
+                </div>
+                <div class="meetup-details">
+                  <h3>{{meetup.title}}</h3>
+                  <address>{{ meetup.location}}</address>
+                </div>
+              </div>
+              <div class="meetup-actions">
+                <a href="btn" class="">More Details</a>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
