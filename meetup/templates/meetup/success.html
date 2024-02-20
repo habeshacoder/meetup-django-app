@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>successfully registered</title>
+  </head>
+  <body>
+    <section id="confirmation">
+      <h2>You registered successfully!</h2>
+      <p>thanks for sign up see u at the meeting</p>
+    </section>
+    <p>
+      Got questions? contact the
+      <span><a href="mailto:{{organizer_email}}">Meetup Organizer</a></span>
+    </p>
+    <section id="continue">
+      <p>Ofcourse you can sign up for more than one meetup</p>
+      <p>
+        <a href=" {% url 'meetup:index' %} " class="btn">Explore our Meetups</a>
+      </p>
+    </section>
+  </body>
+</html>

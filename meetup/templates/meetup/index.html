@@ -7,9 +7,7 @@
       href="{% static 'meetup/styles/all_meetups.css' %}"
     />
     {% endblock %}
-  
   <body>
-
 {% block header_title %}
       <h1>All Meetings List</h1>
 {% endblock  %}
@@ -35,11 +33,11 @@
             <article>
               <div class="meetup-summary">
                 <div class="meetup-image">
-                  <img src="" alt="No Image" />
+                  <img src="{{ meetup.image.url }}" alt="{{ meetup.title }}" />
                 </div>
                 <div class="meetup-details">
                   <h3>{{meetup.title}}</h3>
-                  <address>{{ meetup.location}}</address>
+                  {% comment %} <address>{{ meetup.location}}</address> {% endcomment %}
                 </div>
               </div>
               <div class="meetup-actions">
